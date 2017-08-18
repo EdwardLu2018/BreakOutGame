@@ -18,7 +18,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
     var collisionBehavior = UICollisionBehavior()
     var paddle = UIView()
     var ball = UIView()
-    var lives = 5
+    var lives = 10
     var allObjects = [UIDynamicItem]()
     var bricks = [Brick]()
     var brickColors = [UIColor.red, UIColor.orange, UIColor.yellow, UIColor.green, UIColor.blue, UIColor.purple]
@@ -49,7 +49,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         ballDynamicBehavior.friction = 0
         ballDynamicBehavior.resistance = 0
         ballDynamicBehavior.elasticity = 1.0
-        ballDynamicBehavior.allowsRotation = true
+        ballDynamicBehavior.allowsRotation = false
         dynamicAnimator.addBehavior(ballDynamicBehavior)
         
         // Paddle dynamics
