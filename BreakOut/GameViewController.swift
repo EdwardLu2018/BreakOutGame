@@ -18,7 +18,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
     var collisionBehavior = UICollisionBehavior()
     var paddle = UIView()
     var ball = UIView()
-    var lives = 10
+    var lives = 5
     var allObjects = [UIDynamicItem]()
     var bricks = [Brick]()
     var brickColors = [UIColor.red, UIColor.orange, UIColor.yellow, UIColor.green, UIColor.blue, UIColor.purple]
