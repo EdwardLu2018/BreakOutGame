@@ -21,7 +21,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
     var lives = 5
     var allObjects = [UIDynamicItem]()
     var bricks = [Brick]()
-    var brickColors = [UIColor.red, UIColor.orange, UIColor.yellow, UIColor.green, UIColor.blue, UIColor.purple, UIColor.brown]
+    var brickColors = [UIColor.brown, UIColor.orange, UIColor.red, UIColor.yellow, UIColor.green, UIColor.purple, UIColor.blue, UIColor.black]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -108,7 +108,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
             let height = CGFloat(20)
             createRowOfAdjacentBricks(height, yValue: yValue, amount: amount, color: color, startIndexForLoop: prevAmount, brickMargin: 5)
             prevAmount += amount
-            yValue += (height + CGFloat(drand48() + 0.1) * 5.0)
+            yValue += (height + CGFloat(0.5) * 5.0)
         }
 
         
@@ -148,7 +148,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
     func collisionBehavior(_ behavior: UICollisionBehavior, beganContactFor item1: UIDynamicItem, with item2: UIDynamicItem, at p: CGPoint) {
         for brick in bricks {
             if (item1.isEqual(ball) && item2.isEqual(brick)) || (item2.isEqual(ball) && item1.isEqual(brick)) {
-                if brick.backgroundColor != UIColor.brown {
+                if brick.backgroundColor != UIColor.black {
                     brick.backgroundColor = brickColors[brickColors.index(of: brick.backgroundColor!)! + 1]
                 } else {
                     brick.isHidden = true
