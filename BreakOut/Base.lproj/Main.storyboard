@@ -27,12 +27,13 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="BreakOut" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zo1-v4-Y4W">
                                 <rect key="frame" x="53" y="85" width="269" height="107"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afd-pA-EUY">
-                                <rect key="frame" x="152" y="347" width="71" height="90"/>
+                                <rect key="frame" x="152" y="427" width="71" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Start">
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -44,13 +45,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="afd-pA-EUY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="136" id="0cf-Qh-639"/>
                             <constraint firstItem="2Ft-pZ-o7j" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="6Ng-dY-O9x"/>
-                            <constraint firstItem="afd-pA-EUY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="136" id="6tk-Jg-6nN"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="afd-pA-EUY" secondAttribute="trailing" constant="136" id="HPG-48-Sft"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="afd-pA-EUY" secondAttribute="bottom" constant="206" id="Kcl-ZU-2Md"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Zo1-v4-Y4W" secondAttribute="trailing" constant="37" id="Kwb-FI-gWA"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2Ft-pZ-o7j" secondAttribute="bottom" id="P4c-PL-4l4"/>
-                            <constraint firstItem="afd-pA-EUY" firstAttribute="top" secondItem="Zo1-v4-Y4W" secondAttribute="bottom" constant="165" id="g3d-vx-Ekp"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="afd-pA-EUY" secondAttribute="bottom" constant="269" id="g8A-l3-ouj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="afd-pA-EUY" secondAttribute="trailing" constant="136" id="Zjr-Lq-zzH"/>
+                            <constraint firstItem="afd-pA-EUY" firstAttribute="top" secondItem="Zo1-v4-Y4W" secondAttribute="bottom" constant="260" id="cZg-5u-mOg"/>
                             <constraint firstAttribute="trailing" secondItem="2Ft-pZ-o7j" secondAttribute="trailing" id="oBP-hm-koY"/>
                             <constraint firstItem="2Ft-pZ-o7j" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tgA-OF-l1M"/>
                             <constraint firstItem="Zo1-v4-Y4W" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="65" id="uUu-0g-cmn"/>
@@ -60,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="150" y="312"/>
+            <point key="canvasLocation" x="149.59999999999999" y="311.69415292353824"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="jZV-hF-ZuM">
@@ -74,32 +75,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7J-UW-D1Z">
-                                <rect key="frame" x="87" y="450" width="200" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="T9H-sO-nwb"/>
-                                    <constraint firstAttribute="height" constant="50" id="iFG-xK-auT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
-                                <state key="normal" title="Reset"/>
-                                <connections>
-                                    <action selector="onTappedResetButton:" destination="tC1-3O-2vK" eventType="touchUpInside" id="XjD-mz-OW6"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lives" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOn-XR-fvT">
                                 <rect key="frame" x="31" y="595" width="74" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7J-UW-D1Z">
+                                <rect key="frame" x="87" y="308" width="200" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="onTappedResetButton:" destination="tC1-3O-2vK" eventType="touchUpInside" id="XjD-mz-OW6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="sOn-XR-fvT" firstAttribute="leading" secondItem="M7W-4H-iip" secondAttribute="leadingMargin" constant="15" id="Bdp-kh-Wi7"/>
+                            <constraint firstItem="s7J-UW-D1Z" firstAttribute="leading" secondItem="M7W-4H-iip" secondAttribute="leadingMargin" constant="72" id="Ng2-a1-Sjb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="s7J-UW-D1Z" secondAttribute="trailing" constant="72" id="Qst-fq-u5t"/>
                             <constraint firstItem="iMo-hB-rx8" firstAttribute="top" secondItem="sOn-XR-fvT" secondAttribute="bottom" constant="37" id="Rus-ne-V9q"/>
-                            <constraint firstItem="s7J-UW-D1Z" firstAttribute="centerY" secondItem="M7W-4H-iip" secondAttribute="centerY" constant="160" id="ixy-t3-tow"/>
-                            <constraint firstItem="s7J-UW-D1Z" firstAttribute="centerX" secondItem="M7W-4H-iip" secondAttribute="centerX" id="lDc-1Q-HWk"/>
+                            <constraint firstItem="s7J-UW-D1Z" firstAttribute="top" secondItem="B85-Jb-OZv" secondAttribute="bottom" constant="288" id="i0D-iX-1Qd"/>
+                            <constraint firstItem="sOn-XR-fvT" firstAttribute="top" secondItem="s7J-UW-D1Z" secondAttribute="bottom" constant="237" id="ybQ-13-Ep6"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="4sb-gu-NM4" appends="YES" id="crj-oh-5rB"/>
@@ -117,7 +116,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="892" y="311.69415292353824"/>
+            <point key="canvasLocation" x="1114" y="312"/>
         </scene>
     </scenes>
     <resources>

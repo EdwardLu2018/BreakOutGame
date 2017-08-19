@@ -30,13 +30,13 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         
         // Ball
         ball = UIView(frame: CGRect(x: view.center.x, y: view.center.y, width: 20, height: 20))
-        ball.backgroundColor = UIColor.brown
+        ball.backgroundColor = UIColor.black
         ball.layer.cornerRadius = 10
         ball.clipsToBounds = true
         view.addSubview(ball)
         
         // Paddle
-        paddle = UIView(frame: CGRect(x: view.center.x, y: view.center.y * 1.7, width: 80, height: 20))
+        paddle = UIView(frame: CGRect(x: view.center.x, y: view.center.y * 1.7, width: 70, height: 16))
         paddle.backgroundColor = UIColor.black
         view.addSubview(paddle)
         
@@ -55,7 +55,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         // Paddle dynamics
         let paddleDynamicBehavior = UIDynamicItemBehavior(items: [paddle])
         paddleDynamicBehavior.resistance = 100
-        paddleDynamicBehavior.density = 10000
+        paddleDynamicBehavior.density = 15000
         paddleDynamicBehavior.allowsRotation = false
         dynamicAnimator.addBehavior(paddleDynamicBehavior)
         
@@ -73,7 +73,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         // Push ball
         pushBehavior = UIPushBehavior(items: [ball], mode: .instantaneous)
         pushBehavior.pushDirection = CGVector(dx: 0.2, dy: 1.0)
-        pushBehavior.magnitude = 0.35
+        pushBehavior.magnitude = 0.37
         dynamicAnimator.addBehavior(pushBehavior)
         
         allObjects.append(paddle)
@@ -104,7 +104,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         var yValue = CGFloat(20)
         var prevAmount = 0
         for color in brickColors {
-            let amount = 8
+            let amount = 9
             let height = CGFloat(20)
             createRowOfAdjacentBricks(height, yValue: yValue, amount: amount, color: color, startIndexForLoop: prevAmount, brickMargin: 5)
             prevAmount += amount
@@ -136,7 +136,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
                 ball.center = view.center
                 dynamicAnimator.updateItem(usingCurrentState: ball)
             } else {
-                livesLabel.text = "You lose"
+                livesLabel.text = "You lose!"
                 ball.removeFromSuperview()
                 collisionBehavior.removeItem(ball)
                 dynamicAnimator.updateItem(usingCurrentState: ball)
@@ -158,11 +158,12 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
                 }
             }
         }
+        
         if checkForWin() {
             ball.removeFromSuperview()
             collisionBehavior.removeItem(ball)
             dynamicAnimator.updateItem(usingCurrentState: ball)
-            livesLabel.text = "You win!"
+            livesLabel.text = "YOU WON!"
             resetButton.isHidden = false
         }
     }
